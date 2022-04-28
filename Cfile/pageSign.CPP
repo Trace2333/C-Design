@@ -1,0 +1,129 @@
+#include <stdio.h>
+#include <graphics.h>
+#include <dos.h>
+/*
+******************************************
+pageSign.CPP
+用来绘制图标，包括logo，还有四个小图标
+void pageSign.CPP(int x, int y, int sign, int color)
+输入参数：0表示我的(人头)，1表示示教(一本书)，2表示推荐(一个放大镜)，3表示计划(一个计划栏),4表示HUST标识
+x，y表示左上角的坐标，sign表示图标号,图标大小为24x24
+******************************************
+*/
+
+void pageSign(int x, int y, int sign)
+{
+	if(sign==0)
+	{
+		putpixel(x+10,x+7,LIGHTGRAY);putpixel(x+11,y+7,DARKGRAY);putpixel(x+12,y+7,DARKGRAY);putpixel(x+13,y+7,LIGHTGRAY);
+		putpixel(x+9,y+8,LIGHTGRAY);setcolor(BLACK);line(x+10,y+8,x+13,y+8);putpixel(x+14,y+8,LIGHTGRAY);
+        line(x+9,y+9,x+14,y+9);
+        line(x+9,y+10,x+14,y+10);
+        putpixel(x+9,y+11,LIGHTGRAY);line(x+10,y+11,x+13,y+11);putpixel(x+14,y+11,LIGHTGRAY);
+		putpixel(x+10,y+12,LIGHTGRAY);line(x+11,y+12,x+12,y+12);putpixel(x+13,y+12,LIGHTGRAY);
+		putpixel(x+11,y+13,LIGHTGRAY);putpixel(x+12,y+13,LIGHTGRAY);
+		putpixel(x+8,y+14,LIGHTGRAY);putpixel(x+9,y+14,DARKGRAY);line(x+10,y+14,x+13,y+14);putpixel(x+14,y+14,DARKGRAY);putpixel(x+15,y+14,LIGHTGRAY);
+		putpixel(x+7,y+15,LIGHTGRAY);line(x+8,y+15,x+15,y+15);putpixel(x+16,y+15,BLACK);
+        line(x+7,y+16,x+16,y+16);
+    }
+    if(sign==1)
+    {
+        //图片绘制方向为从左到右
+        setcolor(DARKGRAY);line(x+2,y+7,x+2,y+18);
+        putpixel(x+3,y+6,DARKGRAY);setcolor(BLACK);line(x+3,y+7,x+3,y+17);putpixel(x+3,y+4,LIGHTGRAY);
+        putpixel(x+4,y+5,DARKGRAY);putpixel(x+4,y+6,DARKGRAY);putpixel(x+4,y+7,DARKGRAY);setcolor(DARKGRAY);line(x+4,y+8,x+4,y+15);
+        //画最下方的一条竖线
+        setcolor(BLACK);line(x+3,y+18,x+20,y+18);
+        //继续画第四列
+        putpixel(x+5,y+4,BLACK);putpixel(x+5,y+5,BLACK);putpixel(x+5,y+6,DARKGRAY);putpixel(x+5,y+7,DARKGRAY);line(x+5,y+8,x+5,y+15);putpixel(x+5,y+16,LIGHTGRAY);
+        putpixel(x+6,y+4,BLACK);putpixel(x+6,y+5,BLACK);putpixel(x+5,y+15,LIGHTGRAY);putpixel(x+6,y+16,BLACK);
+        putpixel(x+7,y+4,BLACK);putpixel(x+7,y+5,BLACK);putpixel(x+7,y+15,LIGHTGRAY);putpixel(x+7,y+16,BLACK);
+        putpixel(x+8,y+4,BLACK);putpixel(x+8,y+5,BLACK);putpixel(x+8,y+15,LIGHTGRAY);putpixel(x+8,y+16,BLACK);
+        putpixel(x+9,y+5,BLACK);putpixel(x+9,y+16,BLACK);putpixel(x+9,y+17,BLACK);
+        putpixel(x+10,y+5,DARKGRAY);putpixel(x+10,y+6,BLACK);putpixel(x+10,y+17,BLACK);
+        putpixel(x+11,y+6,DARKGRAY);setcolor(BLACK);line(x+11,y+7,x+11,y+17);
+        putpixel(x+12,y+6,DARKGRAY);line(x+12,y+7,x+12,y+17);
+        putpixel(x+13,y+5,DARKGRAY);putpixel(x+13,y+6,BLACK);putpixel(x+13,y+17,BLACK);
+        putpixel(x+14,y+5,BLACK);putpixel(x+14,y+16,BLACK);putpixel(x+14,y+17,BLACK);
+        //上方变成两条线来画
+        line(x+15,y+4,x+18,y+4);line(x+15,y+5,x+18,y+5);line(x+15,y+16,x+17,y+16);putpixel(x+18,y+16,LIGHTGRAY);
+        putpixel(x+18,y+6,DARKGRAY);putpixel(x+18,y+7,DARKGRAY);line(x+18,y+8,x+18,y+15);
+        putpixel(x+19,y+5,DARKGRAY);putpixel(x+19,y+6,BLACK);putpixel(x+19,y+7,BLACK);setcolor(DARKGRAY);line(x+19,y+8,x+19,y+15);
+        putpixel(x+20,y+6,DARKGRAY);setcolor(BLACK);line(x+20,y+7,x+20,y+17);
+        setcolor(DARKGRAY);line(x+21,y+7,x+21,y+18);
+        setcolor(BLACK);
+    }
+    if(sign==2)
+    {
+        //绘图方向为从左到右
+		putpixel(x+2,y+6,DARKGRAY);putpixel(x+2,y+10,DARKGRAY);setcolor(BLACK);line(x+2,y+7,x+2,y+9);
+        line(x+3,y+6,x+3,y+11);
+		putpixel(x+4,y+4,BLACK);putpixel(x+4,y+5,DARKGRAY);putpixel(x+4,y+11,DARKGRAY);putpixel(x+4,y+12,BLACK);
+        putpixel(x+5,y+3,BLACK);putpixel(x+5,y+4,DARKGRAY);putpixel(x+5,y+12,DARKGRAY);putpixel(x+5,y+13,BLACK);
+        putpixel(x+6,y+2,DARKGRAY);putpixel(x+6,y+3,BLACK);putpixel(x+6,y+5,DARKGRAY);putpixel(x+6,y+6,LIGHTGRAY);putpixel(x+6,y+13,BLACK);putpixel(x+6,y+14,DARKGRAY);
+        putpixel(x+7,y+2,BLACK);putpixel(x+7,y+3,DARKGRAY);putpixel(x+7,y+4,LIGHTGRAY);putpixel(x+7,y+5,DARKGRAY);putpixel(x+7,y+13,DARKGRAY);putpixel(x+7,y+14,BLACK);
+        putpixel(x+8,y+2,BLACK);setcolor(DARKGRAY);line(x+8,y+3,x+8,y+5);putpixel(x+8,y+13,DARKGRAY);putpixel(x+8,y+14,BLACK);
+        putpixel(x+9,y+2,BLACK);line(x+9,y+3,x+9,y+6);putpixel(x+9,13,DARKGRAY);putpixel(x+9,y+14,BLACK);
+        putpixel(x+10,y+2,DARKGRAY);putpixel(x+10,y+3,BLACK);putpixel(x+10,y+5,DARKGRAY);putpixel(x+10,y+6,LIGHTGRAY);putpixel(x+10,y+13,BLACK);putpixel(x+10,y+14,DARKGRAY);
+        putpixel(x+11,y+3,BLACK);putpixel(x+11,y+4,DARKGRAY);putpixel(x+11,y+12,DARKGRAY);putpixel(x+11,y+13,BLACK);
+        putpixel(x+12,y+4,BLACK);putpixel(x+12,y+5,DARKGRAY);putpixel(x+12,y+11,DARKGRAY);putpixel(x+12,y+12,BLACK);putpixel(x+12,y+13,BLACK);
+        setcolor(BLACK);line(x+13,y+5,x+13,y+12);
+        setcolor(BLACK);line(x+14,y+6,x+14,y+10);
+        putpixel(x+13,y+14,BLACK);putpixel(x+14,y+13,BLACK);putpixel(x+14,y+15,BLACK);putpixel(x+15,y+14,BLACK);putpixel(x+15,y+16,BLACK);putpixel(x+16,y+15,BLACK);
+		putpixel(x+16,y+17,BLACK);putpixel(x+17,y+16,BLACK);putpixel(x+17,y+18,BLACK);putpixel(x+18,y+17,BLACK);putpixel(x+18,y+19,BLACK);putpixel(x+19,y+18,BLACK);
+        putpixel(x+19,y+20,BLACK);putpixel(x+20,y+19,BLACK);putpixel(x+20,y+20,BLACK);
+    }
+    if(sign==3)
+    {
+        setcolor(1);
+        rectangle(x,y,x+13,y+18);
+        line(x+1,y+6,x+12,y+6);
+        line(x+1,y+12,x+12,y+12);
+    }
+    if(sign==4)
+    {
+        setcolor(WHITE);
+        line(x+76,y+19,x+104,y+19);
+        line(x+72,y+20,x+111,y+20);
+        line(x+68,y+21,x+120,y+21);
+        line(x+66,y+22,x+124,y+22);
+        line(x+63,y+23,x+126,y+23);
+        line(x+62,y+24,x+129,y+24);
+        line(x+54,y+25,x+59,y+25);line(x+74,y+25,x+133,y+25);
+        line(x+49,y+26,x+58,y+26);line(x+81,y+26,x+134,y+26);
+        line(x+48,y+27,x+57,y+27);line(x+89,y+27,x+135,y+27);
+        line(x+47,y+28,x+57,y+28);line(x+96,y+28,x+135,y+28);
+        line(x+47,y+29,x+58,y+29);line(x+100,y+29,x+135,y+29);
+        line(x+48,y+30,x+60,y+30);line(x+107,y+30,x+135,y+30);
+        line(x+50,y+31,x+61,y+31);line(x+112,y+31,x+134,y+31);
+        line(x+116,y+32,x+134,y+32);line(x+51,y+32,x+63,y+32);
+        line(x+54,y+33,x+66,y+33);line(x+120,y+33,x+132,y+33);
+        line(x+57,y+34,x+68,y+34);line(x+122,y+34,x+131,y+34);
+        line(x+60,y+35,x+70,y+35);line(x+125,y+35,x+130,y+35);
+        line(x+63,y+36,x+73,y+36);line(x+126,y+36,x+129,y+36);
+        line(x+67,y+37,x+75,y+37);line(x+105,y+37,x+128,y+37);
+        line(x+70,y+38,x+77,y+38);line(x+101,y+38,x+127,y+38);
+        line(x+73,y+39,x+79,y+39);line(x+99,y+39,x+125,y+39);
+        line(x+77,y+40,x+80,y+40);line(x+98,y+40,x+123,x+40);
+        line(x+80,y+41,x+82,y+41);line(x+97,y+41,x+117,y+41);
+        line(x+82,y+42,x+84,y+42);line(x+106,y+42,x+115,y+42);
+        line(x+33,y+43,x+40,y+43);line(x+45,y+43,x+53,y+43);line(x+57,y+43,x+65,y+43);line(x+69,y+43,x+77,y+43);line(x+84,y+43,x+85,y+43);line(x+106,y+43,x+114,y+43);
+        line(x+32,y+44,x+39,y+44);line(x+44,y+44,x+52,y+44);line(x+56,y+44,x+64,y+44);line(x+68,y+44,x+76,y+44);line(x+85,y+44,x+86,y+44);line(x+105,y+44,x+114,y+44);
+        line(x+31,y+46,x+38,y+46);line(x+43,y+46,x+51,y+46);line(x+55,y+46,x+63,y+46);line(x+67,y+46,x+75,y+46);line(x+86,y+46,x+91,y+46);line(x+104,y+46,x+113,y+46);
+        line(x+30,y+47,x+38,y+47);line(x+43,y+47,x+51,y+47);line(x+55,y+47,x+63,y+47);line(x+67,y+47,x+75,y+47);line(x+86,y+47,x+92,y+47);line(x+104,y+47,x+113,y+47);
+        line(x+29,y+48,x+37,y+48);line(x+42,y+48,x+50,y+48);line(x+55,y+48,x+63,y+48);line(x+66,y+48,x+75,y+48);line(x+86,y+48,x+94,y+48);line(x+104,y+48,x+113,y+48);
+		line(x+29,y+49,x+37,y+49);line(x+42,y+49,x+50,y+49);line(x+54,y+49,x+62,y+49);line(x+66,y+49,x+74,y+49);
+        line(x+28,y+50,x+37,y+50);line(x+52,y+50,x+49,y+50);line(x+54,y+50,x+62,y+50);line(x+66,y+50,x+73,y+50);line(x+86,y+50,x+96,y+50);line(x+103,y+50,x+112,y+50);
+        line(x+27,y+51,x+36,y+51);line(x+41,y+51,x+49,y+51);line(x+53,y+51,x+62,y+51);line(x+65,y+51,x+74,y+51);line(x+85,y+51,x+97,y+51);line(x+102,y+51,x+112,y+51);
+        line(x+27,y+52,x+36,y+52),line(x+40,y+52,x+49,y+52);line(x+53,y+52,x+61,y+52);line(x+65,y+52,x+73,y+52);line(x+84,y+52,x+98,y+52);line(x+102,y+52,x+112,y+52);
+        line(x+26,y+53,x+48,y+53);line(x+53,y+53,x+61,y+53);line(x+65,y+53,x+73,y+53);line(x+83,y+53,x+98,y+53);line(x+102,y+53,x+111,y+53);
+        line(x+26,y+54,x+48,y+54);line(x+52,y+54,x+61,y+54);line(x+64,y+54,x+72,y+54);line(x+82,y+54,x+97,y+54);line(x+102,y+54,x+110,y+54);
+        line(x+25,y+55,x+35,y+55);line(x+40,y+55,x+47,y+55);line(x+52,y+55,x+59,y+55);line(x+64,y+55,x+71,y+55);line(x+81,y+55,x+97,y+55);line(x+101,y+55,x+110,y+55);
+        line(x+25,y+56,x+34,y+56);line(x+39,y+56,x+47,y+56);line(x+51,y+56,x+60,y+56);line(x+63,y+56,x+71,y+56);line(x+79,y+56,x+96,y+56);line(x+100,y+56,x+110,y+56);
+        line(x+24,y+57,x+34,y+57);line(x+38,y+57,x+46,y+57);line(x+50,y+57,x+71,y+57);line(x+78,y+57,x+96,y+57);line(x+100,y+57,x+110,y+57);
+        line(x+23,y+58,x+33,y+58);line(x+37,y+58,x+46,y+58);line(x+51,y+58,x+70,y+58);line(x+75,y+58,x+95,y+58);line(x+100,y+58,x+110,y+58);
+        line(x+20,y+61,x+92,y+61);line(x+99,y+61,x+108,y+61);
+        line(x+17,y+62,x+90,y+62);line(x+98,y+62,x+107,y+62);
+        line(x+15,y+63,x+89,y+63);line(x+97,y+63,x+106,y+63);
+    }
+}

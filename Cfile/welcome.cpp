@@ -1,0 +1,45 @@
+#include"./include/common.h"
+#include"./include/welcome.h"
+/*---------------------------------------------------------------
+函数名：void welcome()
+函数功能：用于欢迎页面的绘制
+形参：无
+返回值：无
+---------------------------------------------------------------*/
+void welcome()
+{
+    cleardevice();
+    setbkcolor(WHITE);
+    setcolor(LIGHTBLUE);
+    rectangle(3,3,640-3,480-3);
+    puthz(228,180,"体",48,48,BLUE);
+    delay(90);
+    puthz(228+48,180,"育",48,48,BLUE);
+    delay(90);
+    puthz(228+48*2,180,"示",48,48,BLUE);
+    delay(90);
+    puthz(228+48*3,180,"教",48,48,BLUE);
+    delay(90);
+    puthz(372,228,"休闲版",24,24,BLUE);
+    delay(90);
+    cleardevice();
+    setcolor(LIGHTBLUE);
+    rectangle(3,3,640-3,480-3);
+    ShowNumberAndLetter2(6,90,"H",BLUE);
+    ShowNumberAndLetter2(6,150,"U",BLUE);
+    ShowNumberAndLetter2(9,210,"S",BLUE);
+    ShowNumberAndLetter2(9,270,"T",BLUE);
+    delay(300);
+    ShowNumberAndLetter2(72,105,"A",LIGHTBLUE);
+    ShowNumberAndLetter2(81,165,"I",LIGHTBLUE);
+    ShowNumberAndLetter2(72,225,"A",LIGHTBLUE);
+    delay(300);
+    puthz(139,30,"统",24,24,CYAN);
+    puthz(139,60,"一",24,24,CYAN);
+    puthz(139,90,"身",24,24,CYAN);
+    puthz(139,120,"份",24,24,CYAN);
+    puthz(139,150,"认",24,24,CYAN);
+    puthz(139,180,"证",24,24,CYAN);
+    puthz(139,210,"系",24,24,CYAN);
+    puthz(139,240,"统",24,24,CYAN);
+}
